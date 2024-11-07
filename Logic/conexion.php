@@ -1,14 +1,13 @@
 <?php
-//definimos las bariables de coneccion
+//Definimos las variables de conexion
 $server = "localhost";
 $user = "root";
 $pass = "";
 $db = "bd_ventas";
-//creamos las conexiones
+//Creamos la conexion
 try {
     $conexion = new PDO("mysql:host=$server;dbname=$db;charset=utf8", $user, $pass);
-    $conexion ->setAttribute(PDO:: ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
-    echo "conectado";
+    $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
-    echo "Error: " . $e->getMessage();
+    echo "Error en la conexion con PDO : " . $e->getMessage();
 }
